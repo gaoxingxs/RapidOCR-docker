@@ -1,0 +1,24 @@
+# 本地工具配置
+.claude/
+
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.env
+
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+*.log
+.pytest_cache/
+.coverage
+
+# 大模型文件由用户按需放入 models/ 下，默认不提交
+models/*.onnx
+*.tar
+*.tar.gz

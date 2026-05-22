@@ -1,0 +1,13 @@
+.git
+.gitignore
+.devcontainer
+__pycache__
+*.pyc
+.venv
+venv
+.idea
+.vscode
+*.tar
+*.tar.gz
+README.md
+test_client.py
