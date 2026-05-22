@@ -1,13 +1,14 @@
-# 使用轻量级 Python 3.9 镜像
-FROM python:3.9-slim
+# 使用轻量级 Python 3.9 镜像（固定到 bookworm，避免 trixie 包名变更）
+FROM python:3.9-slim-bookworm
 
 WORKDIR /app
 
 # 安装系统依赖：OpenCV 运行库 + wget 用于下载模型
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    libgl1-mesa-glx \
+    libgl1 \
     libglib2.0-0 \
     wget \
+    ca-certificates \
     && rm -rf /var/lib/apt/lists/*
 
 # 先复制依赖文件以便利用层缓存
