@@ -16,9 +16,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 # 复制服务代码
 COPY main.py .
 
-# 复制可选的离线模型（如不存在不会报错，依赖 .dockerignore 控制）
+# 创建模型目录（离线部署时可通过 volume 挂载或构建前放入 ONNX 模型）
 RUN mkdir -p /app/models
-COPY models/ /app/models/
 
 ENV RAPIDOCR_MODEL_DIR=/app/models
 
